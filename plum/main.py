@@ -15,7 +15,7 @@ def main():
     if parser.parse_args().init:
         config.create_new_file()
 
-    if parser.parse_args().run:
+    elif parser.parse_args().run:
         for script in config.get_config('scripts'):
             if parser.parse_args().run in script:
                 print(f'Running {script[parser.parse_args().run]}...')
@@ -23,10 +23,12 @@ def main():
             else:
                 print(f'Cannot find {parser.parse_args().run} in plum.json')
 
-    if parser.parse_args().install:
+    elif parser.parse_args().install:
         dependency.install_dep()
-    if parser.parse_args().install_dev:
+    elif parser.parse_args().install_dev:
         dependency.install_dep(dev=True)
+    else:
+        parser.print_help()
 
 if __name__ == '__main__':
     main()
