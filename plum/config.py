@@ -6,7 +6,7 @@ def create_new_file(filename='plum.json'):
         print("plum.json configuration file already exists in current directory. Please remove it before running --init again.")
     else:
         name = input('Project name: ')
-        data = {'name': name}
+        data = {'name': name, "dependency": "requirements.txt", "devDependency": "requirements-dev.txt"}
         data['scripts'] = []
         data['scripts'].append({
             'start': f'python3 {name}/main.py'
