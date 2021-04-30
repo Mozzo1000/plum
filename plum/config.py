@@ -13,7 +13,7 @@ def create_new_file(filename='plum.json'):
         })
         try:
             with open(filename, 'w') as json_file:
-                json.dump(data, json_file)
+                json.dump(data, json_file, indent=4)
         except:
             print("Failed to create config file")
         print(f'Config file {filename} created successfully!')
