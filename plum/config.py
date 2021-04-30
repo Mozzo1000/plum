@@ -18,10 +18,13 @@ def create_new_file(filename='plum.json'):
             print("Failed to create config file")
         print(f'Config file {filename} created successfully!')
 
-def get_config(filename='plum.json'):
+def get_config(option, filename='plum.json'):
     with open(filename, 'r') as json_file:
         data = json.load(json_file)
-        return data
+        try:
+            return data[option]
+        except KeyError:
+            return None
 
 def config_exists(filename='plum.json'):
     if os.path.isfile(filename):

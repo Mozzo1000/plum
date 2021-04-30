@@ -11,7 +11,7 @@ def main():
         config.create_new_file()
 
     if parser.parse_args().run:
-        for script in config.get_config()['scripts']:
+        for script in config.get_config('scripts'):
             if parser.parse_args().run in script:
                 print(f'Running {script[parser.parse_args().run]}...')
                 os.system(script[parser.parse_args().run])
