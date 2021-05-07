@@ -1,8 +1,8 @@
 import argparse
-import config
+import plum.config
 import os
 import sys
-import dependency
+import plum.dependency
 
 def main():
     parser = argparse.ArgumentParser('plum')
