@@ -1,6 +1,6 @@
 import os
 import sys
-import plum.config
+import plum.config as config
 
 def install_dep(dev=False):
     config_dep = 'dependency'
